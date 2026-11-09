@@ -67,7 +67,7 @@ class PasteColumnCommand(sublime_plugin.TextCommand):
 				s_line = s_line[:col_m] + cp + s_line[col_m:]
 
 			# replace leading space by tabs if the format of the file is using tabs
-			if(use_tabs):
+			if(use_tabs and s_line.strip()):
 				idx = s_line.index(s_line.lstrip()[0])
 				s_line = s_line.replace(tabspc, "\t", int(idx / tabsize))
 			if(pos_end_line_prev!=pos_start_line):
